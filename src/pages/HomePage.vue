@@ -57,7 +57,7 @@ export default {
         margin-top: 70px;
 
         h1, h2, h3 {
-            text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.543);
+            text-shadow: 2px 3px 4px rgba(255, 255, 255, 0.613);
         }
 
         h1 {
@@ -69,6 +69,7 @@ export default {
         h2 {        
             font-size: 55px;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         h3 {
@@ -79,6 +80,7 @@ export default {
         button {
             margin-top: 30px;
             font-size: 30px;
+            box-shadow: 3px 3px 5px rgba(255, 255, 255, 0.613);
         }
     
     }

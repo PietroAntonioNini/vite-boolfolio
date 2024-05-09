@@ -31,4 +31,8 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+h1 {
+    text-shadow: 2px 3px 4px rgba(255, 255, 255, 0.613);
+    cursor: default;
+}
 </style>

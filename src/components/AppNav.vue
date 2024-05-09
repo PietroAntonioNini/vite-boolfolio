@@ -33,7 +33,9 @@ export default {
     <nav class="mb-0">
         <div class="container p-3 d-flex align-items-center justify-content-between">
             <div class="logo-container d-flex flex-column align-items-center ">
-                <img src="/public/profilo.png" alt="">
+                <a href="https://gravatar.com/pietroantonionini">
+                    <img src="/public/profilo.png" alt="">
+                </a>
                 <p class="m-0">Pietro Antonio Nini</p>
             </div>
 
@@ -119,13 +121,14 @@ nav {
 
     .logo-container {
         width: 60px;
-        img {
+        a img {
             width: 100%;
             object-fit: contain;
         }
 
         p {
             width: 135px;
+            cursor: default;
         }
     }
 }

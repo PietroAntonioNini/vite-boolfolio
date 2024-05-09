@@ -1,45 +1,79 @@
 <script>
 
+import axios from 'axios';
+
 export default {
     name: 'AppFooter',
 
     data() {
         return {
-
+            baseApiUrl: 'http://127.0.0.1:8000/api',
+            isLoading: true,
         }
     },
 
+    mounted() {
+        this.apiCall();
+    },
+
+    methods: {
+        apiCall() {
+            this.isLoading = true
+
+            axios.get(this.baseApiUrl + '/projects', {
+                params: {
+                    page: this.apiPageNumber
+                }
+            }).then(res => {
+                if (res.data.success) {
+                    this.isLoading = false
+                }
+            })
+        },
+    },
 }
 </script>
 
 <template>
 
-    <footer class="text-center p-3">
+    <footer class="text-center px-3 pb-3" v-if="!isLoading">
         <hr>
 
-        <div class="container px-5 py-3 d-flex ">
-            <div class="col-6 d-flex justify-content-start ">
-                <span>©2024 Mattia Morriale, Pietro Antonio Nini, Vincenzo Sergi</span>
+        <div class="container px-5 py-3 d-flex">
+            <div class="col-6 d-flex justify-content-start">
+                <span class="py-2">©2024 Pietro Antonio Nini</span>
             </div>
-            <div class="col-6 d-flex justify-content-end gap-3">
-                <i class="fa-brands fa-facebook"></i>
-                <i class="fa-brands fa-instagram"></i>
-                <i class="fa-brands fa-x-twitter"></i>
-                <i class="fa-brands fa-github"></i>
-                <i class="fa-brands fa-linkedin"></i>
+            <div class="col-6 d-flex justify-content-end gap-3 social">
+                <a href="https://www.linkedin.com/in/pietro-antonio-nini-2061241a9/">
+                    <img src="/public/Logo LinkedIn 3D Fluency.png" alt="">
+                </a>
+                <a href="https://github.com/PietroAntonioNini">
+                    <img src="/public/Github logo 3D.png" alt="">
+                </a>
+                <a href="https://gravatar.com/pietroantonionini">
+                    <img src="/public/gravatar.png" alt="">
+                </a>
             </div>
         </div>
 
     </footer>
 
+    <div class="d-flex justify-content-center my-loader" v-else>
+        <div class="loader"></div>
+    </div>
+
 </template>
 
 <style lang="scss" scoped>
+.social {
+    a img {
+        width: 45px;
+        transition: 0.2s linear;
 
-i{
-    font-size: 20px;
-
-    cursor: pointer;
+        &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    }
 }
-
 </style>
