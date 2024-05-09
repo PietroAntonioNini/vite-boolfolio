@@ -10,7 +10,6 @@ export default {
   data() {
     return {
       store,
-
       isSkip: 1,
     }
   },

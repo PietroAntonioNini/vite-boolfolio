@@ -34,13 +34,11 @@ export default {
 
 <style lang="scss" scoped>
 li {
-
-
     padding: 10px;
 
     .logo {
-        width: 60px;
-        height: auto;
+        width: auto;
+        height: 50px;
     }
 }
 </style>

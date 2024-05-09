@@ -14,5 +14,7 @@ export const store = reactive({
     '/public/php.png',
     '/public/mysql.png',
     '/public/laravel.png',
+    '/public/axios.png',
+    '/public/Github logo 64.png',
   ],
 });

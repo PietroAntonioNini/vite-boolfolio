@@ -33,8 +33,8 @@ export default {
     <nav class="mb-0">
         <div class="container p-3 d-flex align-items-center justify-content-between">
             <div class="logo-container d-flex flex-column align-items-center ">
-                <img src="../../public/rocket.png" alt="">
-                <p class="m-0">RocketDev</p>
+                <img src="/public/profilo.png" alt="">
+                <p class="m-0">Pietro Antonio Nini</p>
             </div>
 
             <!-- Default dropstart button -->
@@ -59,7 +59,7 @@ export default {
             </div>
 
             <ul class="d-none d-md-flex list-unstyled gap-5 mb-0 text-uppercase">
-                <li>
+                <li v-if="$route.name != 'home'">
                     <router-link :to="{ name: 'home' }" class="text-decoration-none text-light ">Progetti</router-link>
                 </li>
                 <li>
@@ -116,6 +116,18 @@ nav {
     z-index: 1;
     background: linear-gradient(0deg, hsla(274, 6%, 24%, 0.56) 0%,hsl(0, 0%, 0%) 60%);
     backdrop-filter: blur(15px);
+
+    .logo-container {
+        width: 60px;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+        p {
+            width: 135px;
+        }
+    }
 }
 
 #dropdown {

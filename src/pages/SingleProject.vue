@@ -22,7 +22,9 @@ export default {
                 php: 'php.png',
                 sass: 'sass.png',
                 vue: 'vue.png',
-                vite: 'vite.svg' // formato SVG
+                vue: 'axios.png',
+                vue: 'Github logo 64.png',
+                vite: 'vite.svg', // formato SVG
             }
         }
     },
@@ -68,12 +70,16 @@ export default {
 <template>
 
     <div id="project" class="d-block d-lg-flex pt-5 mt-5" v-if="project">
-        
-        <!-- <img :src="project.image" class="img-fluid" alt="..."> -->
 
-        <!-- carosello di immagini -->
         <div class="img-box">
             <img :src="project.image" class="d-block w-100" alt="...">
+
+            <a href="" class="text-decoration-none">
+                <button class="btn btn-outline-light mt-4 d-flex align-center">
+                    Vai al codice
+                    <i class="fa-brands fa-github fs-4 ms-2"></i>
+                </button>
+            </a>
         </div>
 
         <!-- testo descrittivo -->
@@ -124,6 +130,9 @@ export default {
     .img-box {
         max-width: 700px;
         z-index: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
         img {
             object-fit: contain;

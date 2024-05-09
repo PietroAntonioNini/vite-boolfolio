@@ -17,14 +17,14 @@ export default {
 
         <h3>Website Portfolio</h3>
 
-        <button class="btn btn-outline-primary mt-5" @click="goToProjects">Vai ai progetti</button>
+        <button class="btn btn-outline-light" @click="goToProjects">Vai ai progetti</button>
     </div>
     
     <div class="img-container">
         <img class="lang-infinite" src="/public/lang-infinite.png" alt="">
     </div>
 
-    <div class="social mb-5">
+    <div class="social">
         <a href="https://www.linkedin.com/in/pietro-antonio-nini-2061241a9/">
             <img src="/public/Logo LinkedIn 3D Fluency.png" alt="">
         </a>
@@ -54,29 +54,30 @@ export default {
 
     .titles {
         text-align: center;
-        margin-top: 80px;
+        margin-top: 70px;
 
         h1, h2, h3 {
             text-shadow: 3px 3px 5px rgba(255, 255, 255, 0.543);
         }
 
         h1 {
-            font-size: 100px;
+            font-size: 80px;
             font-weight: bold;
             text-transform: uppercase;
         }
         
         h2 {        
-            font-size: 60px;
+            font-size: 55px;
             font-weight: 600;
         }
 
         h3 {
-            font-size: 50px;
+            font-size: 35px;
             font-weight: 400;
         }
 
         button {
+            margin-top: 30px;
             font-size: 30px;
         }
     
@@ -98,6 +99,7 @@ export default {
     }
 
     .social {
+        margin-bottom: 10px;
         display: flex;
         gap: 20px;
         
@@ -116,22 +118,27 @@ export default {
     @media screen and (max-width: 1400px) {
         
         .titles {
-            margin-top: 80px;
+            margin-top: 20px;
 
             h1 {
-                font-size: 80px;
+                font-size: 46px;
             }
             h2 {
-                font-size: 50px;
+                font-size: 26px;
             }
             h3 {
-                font-size: 30px;
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 20px;
             }
 
         }
 
         .img-container {
-            max-width: 800px;
+            padding-top: 20px;
+            max-width: 600px;
             margin:0 50px 50px;
 
             .lang-infinite {
@@ -142,7 +149,7 @@ export default {
         }
 
         .social a img {
-            width: 60px;
+            width: 50px;
         }
     }
 
@@ -150,51 +157,33 @@ export default {
     @media screen and (max-width: 1200px) {
         
         .titles {
-            margin-top: 80px;
+            margin-top: 20px;
 
             h1 {
-                font-size: 60px;
+                font-size: 45px;
             }
             h2 {
-                font-size: 40px;
+                font-size: 25px;
             }
             h3 {
                 font-size: 20px;
             }
 
             button {
-                font-size: 28px;
+                font-size: 18px;
             }
+        }
 
+        .img-container {
+            margin-top: 10px;
+            max-width: 600px;
         }
     }
 
     //screen tablet 
     @media screen and (max-width: 992px) {
         .titles {
-            margin-top: 60px;
-
-            h1 {
-                font-size: 50px;
-            }
-            h2 {
-                font-size: 30px;
-            }
-            h3 {
-                font-size: 20px;
-            }
-
-            button {
-                font-size: 25px;
-            }
-
-        }
-    }
-
-    //screen mobile 
-    @media screen and (max-width: 576px) {
-        .titles {
-            margin-top: 40px;
+            margin-top: 20px;
 
             h1 {
                 font-size: 40px;
@@ -203,11 +192,33 @@ export default {
                 font-size: 20px;
             }
             h3 {
+                font-size: 18px;
+            }
+        }
+
+        .img-container {
+            margin-top: 10px;
+            max-width: 550px;
+        }
+    }
+
+    //screen mobile 
+    @media screen and (max-width: 576px) {
+        .titles {
+            margin-top: 30px;
+
+            h1 {
+                font-size: 38px;
+            }
+            h2 {
+                font-size: 18px;
+            }
+            h3 {
                 font-size: 15px;
             }
 
             button {
-                font-size: 20px;
+                font-size: 16px;
             }
 
         }
