@@ -43,9 +43,14 @@ export default {
                     page: this.apiPageNumber
                 }
             }).then(res => {
+                console.log(res.data);
                 if (res.data.success) {
                     this.isLoading = false
                 }
+
+                res.data.results.data.forEach(project => {
+                    project.image = 'http://127.0.0.1:8000/storage/' + project.image;
+                });
 
                 this.store.projects = res.data.results.data;
 
