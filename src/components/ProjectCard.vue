@@ -79,24 +79,7 @@ export default {
     position: relative;
 
     .img-container {
-
         overflow: hidden;
-
-        img {
-            transition: transform 0.3s ease;
-        }
-
-
     }
-
-    &:hover .img-container img {
-        transform: scale(1.2);
-    }
-
-    // &:hover {
-    //     transition: transform 0.3s ease;
-    //     background: linear-gradient(0deg, #4f5560 0%, rgba(17, 0, 32, 0.5) 100%);
-
-    // }
 }
 </style>

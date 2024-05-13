@@ -39,6 +39,11 @@ export default {
 
                 this.project = res.data.project
 
+                // Aggiungi il percorso di storage all'URL dell'immagine
+                if (this.project.image) {
+                    this.project.image = 'http://127.0.0.1:8000/storage/' + this.project.image;
+                }
+
             } else {
                 this.$router.push({ name: 'home' })
             }

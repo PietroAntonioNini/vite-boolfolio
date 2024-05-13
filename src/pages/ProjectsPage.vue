@@ -48,6 +48,7 @@ export default {
                     this.isLoading = false
                 }
 
+                //aggiunta percorso img card
                 res.data.results.data.forEach(project => {
                     project.image = 'http://127.0.0.1:8000/storage/' + project.image;
                 });
