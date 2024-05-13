@@ -39,7 +39,7 @@ export default {
     <footer class="text-center px-3 pb-3" v-if="!isLoading">
         <hr>
 
-        <div class="container px-5 py-3 d-flex">
+        <div class="container px-lg-5 px-sm-0 py-3 d-flex">
             <div class="col-6 d-flex justify-content-start">
                 <span class="py-2">©2024 Pietro Antonio Nini</span>
             </div>
@@ -73,6 +73,24 @@ export default {
         &:hover {
             transform: scale(1.2);
             cursor: pointer;
+        }
+    }
+}
+
+//screen mobile 
+@media screen and (max-width: 576px) {
+    .container {
+
+        div {
+            span {
+                font-size: 14px;
+            }
+        }
+
+        div {
+            img {
+                width: 30px;
+            }
         }
     }
 }

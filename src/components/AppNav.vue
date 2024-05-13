@@ -44,7 +44,7 @@ export default {
                 <button type="button" class="btn border-0" data-bs-toggle="dropdown" aria-expanded="false">
                     <span class="navbar-toggler-icon fs-3"></span>
                 </button>
-                <div id="dropdown" class="dropdown-menu px-5 py-3">
+                <div id="dropdown" class="dropdown-menu">
                     <ul class=" list-unstyled text-uppercase text-center d-flex flex-column gap-3 m-0 fs-5">
                         <li>
                             <router-link :to="{ name: 'home' }"
@@ -120,10 +120,13 @@ nav {
     backdrop-filter: blur(15px);
 
     .logo-container {
-        width: 60px;
-        a img {
-            width: 100%;
-            object-fit: contain;
+        width: 135px;
+        a {
+            width: 60px;
+            img {
+                width: 100%;
+                object-fit: contain;
+            }
         }
 
         p {
@@ -136,9 +139,11 @@ nav {
 #dropdown {
     background: linear-gradient(0deg, hsla(274, 6%, 24%, 0.56) 0%,hsl(0, 0%, 0%) 60%);
     backdrop-filter: blur(15px);
+    padding: 10px 40px;
 
     ul {
         li {
+            font-size: 18px;
             transition: 0.4s;
             cursor: pointer;
             position: relative;
@@ -200,6 +205,16 @@ ul {
 
     @media (max-width: 552px) {
         width: 100%;
+    }
+}
+
+//screen mobile 
+@media screen and (max-width: 576px) {
+    #dropdown {
+        padding: 10px 20px;
+        ul li {
+            font-size: 16px;
+        }
     }
 }
 

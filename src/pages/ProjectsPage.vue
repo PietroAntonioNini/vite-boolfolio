@@ -43,7 +43,7 @@ export default {
                     page: this.apiPageNumber
                 }
             }).then(res => {
-                console.log(res.data);
+
                 if (res.data.success) {
                     this.isLoading = false
                 }

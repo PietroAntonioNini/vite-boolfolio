@@ -14,6 +14,7 @@ export default {
                 php: 'php.png',
                 sass: 'sass.png',
                 vue: 'vue.png',
+                axios: 'axios.png',
                 vite: 'vite.svg' // formato SVG
             }
         }
@@ -79,7 +80,11 @@ export default {
     position: relative;
 
     .img-container {
-        overflow: hidden;
+        max-width: 400px;
+        img {
+            width: 100%;
+            object-fit: contain;
+        }
     }
 }
 </style>

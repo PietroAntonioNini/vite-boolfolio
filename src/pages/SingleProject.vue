@@ -30,7 +30,6 @@ export default {
     },
 
     mounted() {
-        // console.log('parametro id della rotta: ', this.$route.params.slug);
         this.projectSlug = this.$route.params.slug;
 
         axios.get(this.apiBaseUrl + '/projects/' + this.projectSlug).then(res => {
