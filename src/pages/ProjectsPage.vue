@@ -34,11 +34,11 @@ export default {
     },
 
     methods: {
-
+        
         apiCall() {
             this.isLoading = true
 
-            axios.get(`${process.env.VUE_APP_API_URL}/projects`, {
+            axios.get(`https://laravel-portfolio-backend-443dfe2e95ce.herokuapp.com/api/projects`, {
                 params: {
                     page: this.apiPageNumber
                 }
