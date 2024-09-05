@@ -10,7 +10,7 @@ export default {
             project: null,
             projectSlug: null,
 
-            apiBaseUrl: 'http://127.0.0.1:8000/api',
+            apiBaseUrl: process.env.VUE_APP_API_URL,
 
             techImages: {
                 html: 'html.png',
@@ -40,7 +40,7 @@ export default {
 
                 // Aggiungi il percorso di storage all'URL dell'immagine
                 if (this.project.image) {
-                    this.project.image = 'http://127.0.0.1:8000/storage/' + this.project.image;
+                    this.project.image = `${process.env.VUE_APP_API_URL}/storage/${project.image}`;
                 }
 
             } else {

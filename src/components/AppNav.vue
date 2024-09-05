@@ -11,7 +11,9 @@ export default {
                 name: '',
                 address: '',
                 message: '',
-            }
+            },
+            successMessage: '',  // Per memorizzare il messaggio di successo
+            errorMessage: '',    // Per memorizzare il messaggio di errore 
         }
     },
 
@@ -20,10 +22,28 @@ export default {
     },
 
     methods: {
-        sendContactRequest() {
-            axios.post('http://127.0.0.1:8000/api/new-contact', this.formData).then(res => {
-                console.log(res);
-            });
+        async sendContactRequest() {
+            try {
+                const response = await axios.post('https://laravel-portfolio-backend-443dfe2e95ce.herokuapp.com/api/new-contact', this.formData);
+
+                // Se la richiesta è andata a buon fine
+                if (response.status === 200) {
+                    this.successMessage = 'Messaggio inviato con successo!';
+                    this.errorMessage = '';
+
+                    // Resetta il modulo
+                    this.formData = {
+                        name: '',
+                        address: '',
+                        message: '',
+                    };
+                }
+            } catch (error) {
+                // Gestisce eventuali errori
+                this.errorMessage = 'Errore durante l\'invio del messaggio. Riprova più tardi.';
+                this.successMessage = '';
+                console.error('Errore:', error);
+            }
         }
     },
 }
@@ -84,22 +104,30 @@ export default {
 
         <div class="offcanvas-body">
 
-                    <form @submit.prevent="sendContactRequest()">
-                        <div class="mb-4">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" v-model="formData.name">
-                        </div>
 
-                        <div class="mb-4">
-                            <label for="address" class="form-label">Indirizzo Email</label>
-                            <input type="email" class="form-control" id="address" name="address" aria-describedby="emailHelp" v-model="formData.address">
-                            <div id="emailHelp" class="form-text">Non condivideremo la tua email con terzi.</div>
-                        </div>
+            <form @submit.prevent="sendContactRequest()">
+                
+                <!-- Mostra il messaggio di successo -->
+                <div v-if="successMessage" class="alert alert-success">{{ successMessage }}</div>
 
-                        <div class="form-floating mb-4">
-                            <textarea class="form-control" placeholder="Lascia un commento qui.." id="message" name="message" style="height: 100px;" v-model="formData.message"></textarea>
-                            <label for="message">Messaggio</label>
-                        </div>
+                <!-- Mostra il messaggio di errore -->
+                <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+                
+                <div class="mb-4">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" v-model="formData.name">
+                </div>
+
+                <div class="mb-4">
+                    <label for="address" class="form-label">Indirizzo Email</label>
+                    <input type="email" class="form-control" id="address" name="address" aria-describedby="emailHelp" v-model="formData.address">
+                    <div id="emailHelp" class="form-text">Non condivideremo la tua email con terzi.</div>
+                </div>
+
+                <div class="form-floating mb-4">
+                    <textarea class="form-control" placeholder="Lascia un commento qui.." id="message" name="message" style="height: 100px;" v-model="formData.message"></textarea>
+                    <label for="message">Messaggio</label>
+                </div>
 
                 <button type="submit" class="btn btn-outline-light ">Invia</button>
             </form>

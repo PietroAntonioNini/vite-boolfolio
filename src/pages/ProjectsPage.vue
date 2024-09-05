@@ -11,7 +11,7 @@ export default {
 
     data() {
         return {
-            baseApiUrl: 'http://127.0.0.1:8000/api',
+            baseApiUrl: process.env.VUE_APP_API_URL,
 
             apiLinks: [],
             apiPageNumber: 1,
@@ -50,7 +50,7 @@ export default {
 
                 //aggiunta percorso img card
                 res.data.results.data.forEach(project => {
-                    project.image = 'http://127.0.0.1:8000/storage/' + project.image;
+                    project.image = `${process.env.VUE_APP_API_URL}/storage/${project.image}`;
                 });
 
                 this.store.projects = res.data.results.data;

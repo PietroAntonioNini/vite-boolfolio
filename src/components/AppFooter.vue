@@ -7,7 +7,7 @@ export default {
 
     data() {
         return {
-            baseApiUrl: 'http://127.0.0.1:8000/api',
+            baseApiUrl: process.env.VUE_APP_API_URL,
             isLoading: true,
         }
     },
