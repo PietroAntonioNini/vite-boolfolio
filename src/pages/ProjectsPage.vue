@@ -38,7 +38,7 @@ export default {
         apiCall() {
             this.isLoading = true
 
-            axios.get(this.baseApiUrl + '/projects', {
+            axios.get(`${process.env.VUE_APP_API_URL}/projects`, {
                 params: {
                     page: this.apiPageNumber
                 }
