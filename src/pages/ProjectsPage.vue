@@ -50,7 +50,7 @@ export default {
 
                 //aggiunta percorso img card
                 res.data.results.data.forEach(project => {
-                    project.image = `${import.meta.env.VITE_APP_API_URL}/storage/${project.image}`;
+                    project.image = `${import.meta.env.VITE_APP_API_URL}/${project.image}`;
                 });
 
                 this.store.projects = res.data.results.data;

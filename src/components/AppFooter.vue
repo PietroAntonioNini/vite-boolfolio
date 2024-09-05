@@ -7,7 +7,6 @@ export default {
 
     data() {
         return {
-            baseApiUrl: process.env.VUE_APP_API_URL,
             isLoading: true,
         }
     },
@@ -20,7 +19,7 @@ export default {
         apiCall() {
             this.isLoading = true
 
-            axios.get(this.baseApiUrl + '/projects', {
+            axios.get(`${import.meta.env.VITE_APP_API_URL}/api/projects`, {
                 params: {
                     page: this.apiPageNumber
                 }
