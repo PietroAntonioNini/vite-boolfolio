@@ -32,7 +32,7 @@ export default {
     mounted() {
         this.projectSlug = this.$route.params.slug;
 
-        axios.get(`${this.apiBaseUrl}/projects/${this.projectSlug}`).then(res => {
+        axios.get(`${import.meta.env.VITE_APP_API_URL}/projects/${this.projectSlug}`).then(res => {
 
             if (res.data.success) {
 
@@ -40,7 +40,7 @@ export default {
 
                 // Aggiungi il percorso di storage all'URL dell'immagine
                 if (this.project.image) {
-                    this.project.image = `${this.apiBaseUrl}/storage/${this.project.image}`;
+                    this.project.image = `${import.meta.env.VITE_APP_API_URL}/storage/${this.project.image}`;
                 }
 
             } else {

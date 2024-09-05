@@ -38,7 +38,7 @@ export default {
         apiCall() {
             this.isLoading = true
 
-            axios.get(`https://laravel-portfolio-backend-443dfe2e95ce.herokuapp.com/api/projects`, {
+            axios.get(`${import.meta.env.VITE_APP_API_URL}/api/projects`, {
                 params: {
                     page: this.apiPageNumber
                 }
@@ -50,7 +50,7 @@ export default {
 
                 //aggiunta percorso img card
                 res.data.results.data.forEach(project => {
-                    project.image = `https://laravel-portfolio-backend-443dfe2e95ce.herokuapp.com/storage/${project.image}`;
+                    project.image = `${import.meta.env.VITE_APP_API_URL}/storage/${project.image}`;
                 });
 
                 this.store.projects = res.data.results.data;
