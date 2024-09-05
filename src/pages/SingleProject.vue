@@ -10,7 +10,7 @@ export default {
             project: null,
             projectSlug: null,
 
-            apiBaseUrl: process.env.VUE_APP_API_URL,
+            apiBaseUrl: `https://laravel-portfolio-backend-443dfe2e95ce.herokuapp.com/api`,
 
             techImages: {
                 html: 'html.png',
