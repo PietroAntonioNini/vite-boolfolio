@@ -40,7 +40,7 @@ export default {
 
                 // Aggiungi il percorso di storage all'URL dell'immagine
                 if (this.project.image) {
-                    this.project.image = `${import.meta.env.VITE_APP_API_URL}/${this.project.image}`;
+                    this.project.image = `${import.meta.env.VITE_APP_API_URL}/storage/${this.project.image}`;
                 }
 
             } else {
