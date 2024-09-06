@@ -32,7 +32,7 @@ export default {
 
             // Controlla se il tipo di tecnologia ha un'immagine associata
             if (this.techImages.hasOwnProperty(techType)) {
-                imagePath = (`/public/${this.techImages[techType]}`);
+                imagePath = (`/${this.techImages[techType]}`);
             }
             return imagePath;
         }
