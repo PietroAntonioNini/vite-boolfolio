@@ -24,7 +24,7 @@ export default {
                 <ul class="d-flex flex-wrap justify-content-center align-items-center list-unstyled gap-5 mb-0 text-uppercase pt-4 rounded-2">
                     <li v-for="logo in store.logos" :key="logo.src">
                         <a :href="logo.link">
-                            <img :src="'../..' + logo.src" :alt="logo.src" class="logo">
+                            <img :src="logo.src" :alt="logo.src" class="logo">
                         </a>
                     </li>
                 </ul>
