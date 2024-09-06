@@ -7,7 +7,7 @@ export default {
             techImages: {
                 html: 'html.png',
                 css: 'css.png',
-                js: 'js.png',
+                javascript: 'js.png',
                 bootstrap: 'bootstrap.png',
                 laravel: 'laravel.png',
                 mysql: 'mysql.png',
