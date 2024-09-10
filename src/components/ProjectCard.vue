@@ -49,7 +49,7 @@ export default {
 <template>
     <li class="card p-2 " style="width: 18rem;">
         <div class="img-container">
-            <img src="https://drive.google.com/uc?export=view&id=1weRBs_mvqhNfx-INzQeEGKM4QFSXn8FW" class="card-img-top" alt="image">
+            <img :src="`/proxy-image/${project.image}`" class="card-img-top" alt="image">
         </div>
         <div class="card-body p-4 d-flex flex-column justify-content-between ">
             <div class="my-4">
