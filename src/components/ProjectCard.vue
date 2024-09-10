@@ -35,7 +35,13 @@ export default {
                 imagePath = (`/${this.techImages[techType]}`);
             }
             return imagePath;
-        }
+        },
+
+        getCleanImageUrl(image) {
+            // Se project.image contiene qualcosa di extra, rimuovilo
+            const googleDriveId = image.replace(/https:\/\/.*\/storage\//, '');
+            return `https://drive.google.com/uc?id=${googleDriveId}`;
+        },
     },
 }
 </script>
@@ -43,7 +49,7 @@ export default {
 <template>
     <li class="card p-2 " style="width: 18rem;">
         <div class="img-container">
-            <img :src="project.image" class="card-img-top" alt="@">
+            <img :src="getCleanImageUrl(project.image)" class="card-img-top" alt="@">
         </div>
         <div class="card-body p-4 d-flex flex-column justify-content-between ">
             <div class="my-4">
