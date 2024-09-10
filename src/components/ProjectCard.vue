@@ -40,7 +40,7 @@ export default {
         getCleanImageUrl(image) {
             // Se project.image contiene qualcosa di extra, rimuovilo
             const googleDriveId = image.replace(/https:\/\/.*\/storage\//, '');
-            return `https://drive.google.com/uc?id=${googleDriveId}`;
+            return googleDriveId;
         },
     },
 }
